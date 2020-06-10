@@ -13,3 +13,8 @@
   border: 1px solid black;
   border-radius: 10px
 }
+
+.spacer {
+  margin: 0 10px 0 10px;
+  border-bottom: 2px solid black;
+}
