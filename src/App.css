@@ -18,3 +18,24 @@
   margin: 0 10px 0 10px;
   border-bottom: 2px solid black;
 }
+
+.display {
+  margin: 15px;
+  padding: 10px;
+  text-align: right;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+.key-reg {
+  width: 40px;
+  height: 40px;
+  background-color: #F18F01;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 5px 5px 8px #695958;
+}

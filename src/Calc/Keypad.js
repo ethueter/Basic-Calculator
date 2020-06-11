@@ -1,11 +1,11 @@
 import React from 'react';
-
+import Key from './Key';
 
 const Keypad = () => {
     
     return (
         <div>
-            <h1>I'm a keypad</h1>
+            <Key  />
         </div>
     )
 };
