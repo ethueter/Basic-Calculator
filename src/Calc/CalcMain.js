@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Display from './Display';
 import Keypad from './Keypad';
 import Spacer from './Spacer';
@@ -7,6 +7,10 @@ const nums = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'ei
 const opps = ['add', 'sub', 'multiply', 'divide'];
 
 const CalcMain = () => {
+    const {currNum, setCurrNum} = useState('');
+    const {display, setDisplay} = useState('');
+    const {opp, setOpp} = useState('');
+    const {equation, setEquation} = useState([]);
     
     return (
         <div className='calc-body'>
