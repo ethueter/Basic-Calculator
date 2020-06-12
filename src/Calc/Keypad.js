@@ -1,11 +1,12 @@
 import React from 'react';
 import Key from './Key';
 
-const Keypad = () => {
+const Keypad = (props) => {
     
     return (
         <div className='keypad'>
-            <Key  />
+            <Key
+            click={props.click}  />
         </div>
     )
 };

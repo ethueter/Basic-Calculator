@@ -2,21 +2,24 @@ import React, {useState} from 'react';
 import Display from './Display';
 import Keypad from './Keypad';
 import Spacer from './Spacer';
+import {nums, opps} from './Equate';
 
-const nums = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-const opps = ['add', 'sub', 'multiply', 'divide'];
 
 const CalcMain = () => {
     const {currNum, setCurrNum} = useState('');
     const {display, setDisplay} = useState('');
     const {opp, setOpp} = useState('');
     const {equation, setEquation} = useState([]);
+
+    const handleClick =()=> {
+        console.log( nums)
+    }
     
     return (
         <div className='calc-body'>
             <Display />
             <Spacer />
-            <Keypad />
+            <Keypad click={handleClick}/>
         </div>
     )
 };
