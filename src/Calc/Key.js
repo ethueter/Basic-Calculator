@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Key = () => {
+const Key = (props) => {
 
     return <div className="key-reg">1</div>;
 };
