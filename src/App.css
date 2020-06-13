@@ -6,7 +6,7 @@
 
 .calc-body {
   background-color: #E8F1F2;
-  width: 400px;
+  width: 440px;
   display: flex;
   flex-direction: column;
   margin-top: 60px;
@@ -35,9 +35,16 @@
 
 .keypad {
   width: 60%;
-  margin: 15px;
+  margin: 10px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.keypad-opps {
+  width: 40%;
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap
 }
 
 .key-reg {

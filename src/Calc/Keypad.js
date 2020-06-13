@@ -1,5 +1,5 @@
 import React from 'react';
-import Key from './Key';
+
 
 const Keypad = (props) => {
     
@@ -39,10 +39,29 @@ const Keypad = (props) => {
           <div id="decimal" className="key-reg" onClick={props.click}>
             .
           </div>
+          
         </div>
-        <div id="one" className="key-reg" onClick={props.click}>
-          1
-        </div>
+            <div className='keypad-opps'>
+                <div id="clear" className="key-big" onClick={props.click}>
+                    Clear
+                </div>
+                <div id="add" className="key-reg" onClick={props.click}>
+                    +
+                </div>
+                <div id="sub" className="key-reg" onClick={props.click}>
+                    -
+                </div>
+                <div id="multiply" className="key-reg" onClick={props.click}>
+                    *
+                </div>
+                <div id="divide" className="key-reg" onClick={props.click}>
+                    /
+                </div>
+                <div id="equate" className="key-big" onClick={props.click}>
+                    =
+                </div>
+            </div>
+        
       </div>
     );
 };
