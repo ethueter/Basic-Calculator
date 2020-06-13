@@ -27,7 +27,14 @@
   border-radius: 10px;
 }
 
+.keypad-container {
+  margin: 15px;
+  display: flex;
+  
+}
+
 .keypad {
+  width: 60%;
   margin: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -44,4 +51,20 @@
   border: 1px solid black;
   border-radius: 4px;
   box-shadow: 3px 3px 5px #695958;
+  margin: 5px
+}
+
+.key-big {
+  width: 133px;
+  height: 60px;
+  background-color: #F18F01;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 3px 3px 5px #695958;
+  margin: 5px
+
 }
