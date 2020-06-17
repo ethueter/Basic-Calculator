@@ -11,12 +11,28 @@ const CalcMain = () => {
     const [opp, setOpp] = useState('');
     const [equation, setEquation] = useState([]);
 
-    const handleClick =()=> {
-        console.log('I am clicked')
-    }
+    const handleClick = (event) => {
+        let id = event.target.id
+    
+        switch(true) {
+            case nums.includes(id):
+            console.log('number', id);
+            break;
+            case opps.includes(id):
+            console.log('operand', id);
+            break;
+            default:
+            console.log("didn't work")
+        };
+    };
 
     const handleClear = () => {
-        setDisplay('0')
+        setDisplay('0');
+        setEquation([]);
+    };
+
+    const handleNum = () => {
+        
     }
     
     return (
