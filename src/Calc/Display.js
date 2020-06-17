@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-const Display = () => {
+const Display = ({display}) => {
     
     return (
         <div className="display">
-            <h1>I'm a display</h1>
+            <h1>{display}</h1>
         </div>
     )
 };

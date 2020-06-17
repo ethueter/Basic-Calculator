@@ -42,7 +42,7 @@ const Keypad = (props) => {
           
         </div>
             <div className='keypad-opps'>
-                <div id="clear" className="key-big" onClick={props.click}>
+                <div id="clear" className="key-big" onClick={props.clear}>
                     Clear
                 </div>
                 <div id="add" className="key-reg" onClick={props.click}>

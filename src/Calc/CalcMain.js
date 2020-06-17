@@ -6,20 +6,27 @@ import {nums, opps} from './Equate';
 
 
 const CalcMain = () => {
-    const {currNum, setCurrNum} = useState('');
-    const {display, setDisplay} = useState('');
-    const {opp, setOpp} = useState('');
-    const {equation, setEquation} = useState([]);
+    const [currNum, setCurrNum] = useState('');
+    const [display, setDisplay] = useState('1');
+    const [opp, setOpp] = useState('');
+    const [equation, setEquation] = useState([]);
 
     const handleClick =()=> {
-        console.log( nums)
+        console.log('I am clicked')
+    }
+
+    const handleClear = () => {
+        setDisplay('0')
     }
     
     return (
         <div className='calc-body'>
-            <Display />
+            <Display display={display}/>
             <Spacer />
-            <Keypad click={handleClick}/>
+            <Keypad 
+                click={handleClick}
+                clear={handleClear}
+                />
         </div>
     )
 };
