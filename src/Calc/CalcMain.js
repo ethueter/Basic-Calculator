@@ -22,6 +22,7 @@ const CalcMain = () => {
             break;
             case opps.includes(id):
             console.log('operand', id);
+            handleOpp(val);
             break;
             case id === 'decimal':
             console.log(id);
@@ -47,6 +48,12 @@ const CalcMain = () => {
         setDisplay(newNum);
         };
     };
+
+    const handleOpp = (opp) => {
+        setEquation([...equation, currNum]);
+        setOpp(opp);
+        setCurrNum('')
+    }
     
     return (
         <div className='calc-body'>
