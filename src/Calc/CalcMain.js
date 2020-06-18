@@ -8,7 +8,7 @@ import {nums, opps} from './Equate';
 const CalcMain = () => {
     const [currNum, setCurrNum] = useState('');
     const [display, setDisplay] = useState('0');
-    const [opp, setOpp] = useState('');
+    const [operand, setOpp] = useState('');
     const [equation, setEquation] = useState([]);
 
     const handleClick = (event) => {
@@ -35,21 +35,33 @@ const CalcMain = () => {
     const handleClear = () => {
         setCurrNum('');
         setDisplay('0');
+        setOpp('');
         setEquation([]);
     };
 
     const handleNum = (num) => {
-        let newNum;
+        let newNum = currNum + num;
         if (num === "0" && currNum.charAt(0) === "0") {
             return num
         } else {
-        newNum = currNum + num;
-        setCurrNum(newNum);
-        setDisplay(newNum);
+            if (operand) {
+                setEquation([...equation, newNum, operand]);
+                setCurrNum(num);
+                setDisplay(num);
+                setOpp('');
+            } else {
+                setCurrNum(newNum);
+                setDisplay(newNum);
+            };
         };
     };
 
     const handleOpp = (opp) => {
+
+        if (opp != '-') {
+            setOpp(opp);
+        } else if ()
+
         setEquation([...equation, currNum]);
         setOpp(opp);
         setCurrNum('')
