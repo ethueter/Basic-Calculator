@@ -45,7 +45,7 @@ const CalcMain = () => {
             return num
         } else {
             if (operand) {
-                setEquation([...equation, newNum, operand]);
+                setEquation([...equation, operand]);
                 setCurrNum(num);
                 setDisplay(num);
                 setOpp('');
@@ -58,13 +58,19 @@ const CalcMain = () => {
 
     const handleOpp = (opp) => {
 
-        if (opp != '-') {
+        if (opp !== '-' && equation !== []) {
+            setOpp(opp);   
+        } else if (currNum === '') {
+            setCurrNum('-');
+        } else if (operand === '') {
             setOpp(opp);
-        } else if ()
+        } else {
+            setEquation([...equation, currNum, operand]);
+            setCurrNum('-');
+            setOpp('');
+        }
 
-        setEquation([...equation, currNum]);
-        setOpp(opp);
-        setCurrNum('')
+        
     }
     
     return (
