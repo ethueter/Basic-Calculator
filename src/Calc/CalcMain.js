@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Display from './Display';
 import Keypad from './Keypad';
 import Spacer from './Spacer';
-import {nums, opps} from './Equate';
+import { nums, opps } from './Equate';
 import { evaluate } from 'mathjs';
 
 
@@ -45,8 +45,8 @@ const CalcMain = () => {
         if (num === "0" && currNum.charAt(0) === "0") {
             return num
         } else {
-            if (operand) {
-                setEquation([...equation, operand]);
+            if (operand !== '') {
+                setEquation([...equation, currNum, operand]);
                 setCurrNum(num);
                 setDisplay(num);
                 setOpp('');
@@ -73,10 +73,16 @@ const CalcMain = () => {
     };
 
     const getSolution = () => {
-        // let solution = evaluate(equation);
-        // setDisplay(solution);
-        // setEquation([solution])
-        console.log('equation', equation)
+        let problem = [...equation, currNum].join('');
+        console.log('problem', problem);
+        let solution = evaluate(problem).toString();
+        console.log(typeof solution)
+        setDisplay(solution);
+        setEquation([solution]);
+        setCurrNum('');
+        setOpp('');
+        
+        
     }
     
     return (
