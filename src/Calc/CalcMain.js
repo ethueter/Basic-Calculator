@@ -3,6 +3,7 @@ import Display from './Display';
 import Keypad from './Keypad';
 import Spacer from './Spacer';
 import {nums, opps} from './Equate';
+import { evaluate } from 'mathjs';
 
 
 const CalcMain = () => {
@@ -68,9 +69,14 @@ const CalcMain = () => {
             setEquation([...equation, currNum, operand]);
             setCurrNum('-');
             setOpp('');
-        }
+        };
+    };
 
-        
+    const getSolution = () => {
+        // let solution = evaluate(equation);
+        // setDisplay(solution);
+        // setEquation([solution])
+        console.log('equation', equation)
     }
     
     return (
@@ -80,6 +86,7 @@ const CalcMain = () => {
             <Keypad 
                 click={handleClick}
                 clear={handleClear}
+                solve={getSolution}
                 />
         </div>
     )

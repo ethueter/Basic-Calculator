@@ -57,7 +57,7 @@ const Keypad = (props) => {
                 <div id="divide" className="key-reg" onClick={props.click}>
                     /
                 </div>
-                <div id="equate" className="key-big" onClick={props.click}>
+                <div id="equate" className="key-big" onClick={props.solve}>
                     =
                 </div>
             </div>
