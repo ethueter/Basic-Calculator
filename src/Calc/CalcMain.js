@@ -27,6 +27,7 @@ const CalcMain = () => {
             break;
             case id === 'decimal':
             console.log(id);
+            handleDec();
             break;
             default:
             console.log("didn't work")
@@ -72,6 +73,13 @@ const CalcMain = () => {
         };
     };
 
+    const handleDec = () => {
+        if (!currNum.includes('.')) {
+            let withDec = currNum + '.'
+            setCurrNum(withDec);
+        };
+    };
+
     const getSolution = () => {
         let problem = [...equation, currNum].join('');
         console.log('problem', problem);
@@ -83,7 +91,7 @@ const CalcMain = () => {
         setOpp('');
         
         
-    }
+    };
     
     return (
         <div className='calc-body'>
