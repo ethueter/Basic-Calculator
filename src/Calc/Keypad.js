@@ -6,7 +6,7 @@ const Keypad = (props) => {
     return (
       <div className="keypad-container">
         <div className="keypad">
-          <div id="seven" className="key-reg" onClick={props.click}>
+          <div id="seven" className={props.active ? "key-reg active" : "key-reg"} onClick={props.click}>
             7
           </div>
           <div id="eight" className="key-reg" onClick={props.click}>
