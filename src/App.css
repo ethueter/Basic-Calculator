@@ -47,7 +47,7 @@
   flex-wrap: wrap
 }
 
-.key-reg {
+button {
   width: 60px;
   height: 60px;
   background-color: #F18F01;
@@ -76,6 +76,6 @@
 
 }
 
-.active {
+button:active {
   background-color: #CB7A01
 }

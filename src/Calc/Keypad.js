@@ -6,60 +6,60 @@ const Keypad = (props) => {
     return (
       <div className="keypad-container">
         <div className="keypad">
-          <div id="seven" className={props.active ? "key-reg active" : "key-reg"} onClick={props.click}>
+          <button id="seven" className="key-reg" onClick={props.click}>
             7
-          </div>
-          <div id="eight" className="key-reg" onClick={props.click}>
+          </button>
+          <button id="eight" className="key-reg" onClick={props.click}>
             8
-          </div>
-          <div id="nine" className="key-reg" onClick={props.click}>
+          </button>
+          <button id="nine" className="key-reg" onClick={props.click}>
             9
-          </div>
-          <div id="four" className="key-reg" onClick={props.click}>
+          </button>
+          <button id="four" className="key-reg" onClick={props.click}>
             4
-          </div>
-          <div id="five" className="key-reg" onClick={props.click}>
+          </button>
+          <button id="five" className="key-reg" onClick={props.click}>
             5
-          </div>
-          <div id="six" className="key-reg" onClick={props.click}>
+          </button>
+          <button id="six" className="key-reg" onClick={props.click}>
             6
-          </div>
-          <div id="one" className="key-reg" onClick={props.click}>
+          </button>
+          <button id="one" className="key-reg" onClick={props.click}>
             1
-          </div>
-          <div id="two" className="key-reg" onClick={props.click}>
+          </button>
+          <button id="two" className="key-reg" onClick={props.click}>
             2
-          </div>
-          <div id="three" className="key-reg" onClick={props.click}>
+          </button>
+          <button id="three" className="key-reg" onClick={props.click}>
             3
-          </div>
-          <div id="zero" className="key-big" onClick={props.click}>
+          </button>
+          <button id="zero" className="key-big" onClick={props.click}>
             0
-          </div>
-          <div id="decimal" className="key-reg" onClick={props.click}>
+          </button>
+          <button id="decimal" className="key-reg" onClick={props.click}>
             .
-          </div>
+          </button>
           
         </div>
             <div className='keypad-opps'>
-                <div id="clear" className="key-big" onClick={props.clear}>
+                <button id="clear" className="key-big" onClick={props.clear}>
                     Clear
-                </div>
-                <div id="add" className="key-reg" onClick={props.click}>
+                </button>
+                <button id="add" className="key-reg" onClick={props.click}>
                     +
-                </div>
-                <div id="sub" className="key-reg" onClick={props.click}>
+                </button>
+                <button id="sub" className="key-reg" onClick={props.click}>
                     -
-                </div>
-                <div id="multiply" className="key-reg" onClick={props.click}>
+                </button>
+                <button id="multiply" className="key-reg" onClick={props.click}>
                     *
-                </div>
-                <div id="divide" className="key-reg" onClick={props.click}>
+                </button>
+                <button id="buttonide" className="key-reg" onClick={props.click}>
                     /
-                </div>
-                <div id="equate" className="key-big" onClick={props.solve}>
+                </button>
+                <button id="equate" className="key-big" onClick={props.solve}>
                     =
-                </div>
+                </button>
             </div>
         
       </div>
