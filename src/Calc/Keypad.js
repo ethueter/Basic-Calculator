@@ -54,7 +54,7 @@ const Keypad = (props) => {
                 <button id="multiply" className="key-reg" onClick={props.click}>
                     *
                 </button>
-                <button id="buttonide" className="key-reg" onClick={props.click}>
+                <button id="divide" className="key-reg" onClick={props.click}>
                     /
                 </button>
                 <button id="equate" className="key-big" onClick={props.solve}>

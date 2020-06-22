@@ -11,11 +11,12 @@ const CalcMain = () => {
     const [display, setDisplay] = useState('0');
     const [operand, setOpp] = useState('');
     const [equation, setEquation] = useState([]);
-    const [clicked, setClicked] = useState(false)
+    const [solved, setSolved] = useState(false);
+
     const handleClick = (event) => {
         let id = event.target.id;
         let val = event.target.innerText
-        setClicked(!clicked)
+        
         switch(true) {
             case nums.includes(id):
             console.log('number', id);
@@ -39,10 +40,16 @@ const CalcMain = () => {
         setDisplay('0');
         setOpp('');
         setEquation([]);
+        setSolved(false);
     };
 
     const handleNum = (num) => {
         let newNum = currNum + num;
+
+        if (solved) {
+            handleClear();
+        };
+
         if (num === "0" && currNum.charAt(0) === "0") {
             return num
         } else {
@@ -89,7 +96,7 @@ const CalcMain = () => {
         setEquation([solution]);
         setCurrNum('');
         setOpp('');
-        
+        setSolved(true);
         
     };
     
@@ -101,7 +108,6 @@ const CalcMain = () => {
                 click={handleClick}
                 clear={handleClear}
                 solve={getSolution}
-                active={clicked}
                 />
         </div>
     )
