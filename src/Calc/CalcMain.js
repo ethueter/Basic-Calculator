@@ -48,7 +48,6 @@ const CalcMain = () => {
         let newNum = currNum + num;
 
         if (solved) {
-            console.log('triggered')
             setCurrNum(num);
             setDisplay(num);
             setSolved(false)
@@ -57,7 +56,6 @@ const CalcMain = () => {
             return num
         } else {
             if (operand !== "") {
-              console.log(solved, 'solved')
               setEquation([...equation, currNum, operand]);
               setCurrNum(num);
               setDisplay(num);
@@ -85,8 +83,7 @@ const CalcMain = () => {
             } else {
                 setEquation([...equation, currNum, operand]);
                 setCurrNum('-');
-                setOpp('');
-                
+                setOpp('');  
             };
         } 
     };
@@ -100,7 +97,6 @@ const CalcMain = () => {
 
     const getSolution = () => {
         let problem = [...equation, currNum].join('');
-        console.log('problem', problem);
         let solution = evaluate(problem).toString();
         setDisplay(solution);
         setEquation([]);
