@@ -66,18 +66,19 @@ const CalcMain = () => {
     };
 
     const handleOpp = (opp) => {
-
-        if (opp !== '-' && equation !== []) {
-            setOpp(opp);   
-        } else if (currNum === '') {
-            setCurrNum('-');
-        } else if (operand === '') {
+        if (opp !== '-') {
             setOpp(opp);
-        } else {
-            setEquation([...equation, currNum, operand]);
-            setCurrNum('-');
-            setOpp('');
-        };
+        } else if ( opp === '-') {
+            if (currNum === '') {
+                setCurrNum('-');
+            } else if (operand === '') {
+                setOpp(opp);
+            } else {
+                setEquation([...equation, currNum, operand]);
+                setCurrNum('-');
+                setOpp('');
+            };
+        } 
     };
 
     const handleDec = () => {
