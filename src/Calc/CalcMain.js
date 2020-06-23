@@ -36,6 +36,7 @@ const CalcMain = () => {
     };
 
     const handleClear = () => {
+        
         setCurrNum('');
         setDisplay('0');
         setOpp('');
@@ -47,20 +48,23 @@ const CalcMain = () => {
         let newNum = currNum + num;
 
         if (solved) {
-            handleClear();
-        };
-
-        if (num === "0" && currNum.charAt(0) === "0") {
+            console.log('triggered')
+            setCurrNum(num);
+            setDisplay(num);
+            setSolved(false)
+            return
+        } else if (num === "0" && currNum.charAt(0) === "0") {
             return num
         } else {
-            if (operand !== '') {
-                setEquation([...equation, currNum, operand]);
-                setCurrNum(num);
-                setDisplay(num);
-                setOpp('');
+            if (operand !== "") {
+              console.log(solved, 'solved')
+              setEquation([...equation, currNum, operand]);
+              setCurrNum(num);
+              setDisplay(num);
+              setOpp("");
             } else {
-                setCurrNum(newNum);
-                setDisplay(newNum);
+              setCurrNum(newNum);
+              setDisplay(newNum);
             };
         };
     };
@@ -77,6 +81,7 @@ const CalcMain = () => {
                 setEquation([...equation, currNum, operand]);
                 setCurrNum('-');
                 setOpp('');
+                
             };
         } 
     };
@@ -92,10 +97,9 @@ const CalcMain = () => {
         let problem = [...equation, currNum].join('');
         console.log('problem', problem);
         let solution = evaluate(problem).toString();
-        console.log(typeof solution)
         setDisplay(solution);
-        setEquation([solution]);
-        setCurrNum('');
+        setEquation([]);
+        setCurrNum(solution);
         setOpp('');
         setSolved(true);
         
