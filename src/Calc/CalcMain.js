@@ -71,7 +71,12 @@ const CalcMain = () => {
 
     const handleOpp = (opp) => {
         if (opp !== '-') {
-            setOpp(opp);
+            if (currNum === '' && !solved) {
+                return
+            } else {
+                setOpp(opp);
+                setSolved(false)
+            }
         } else if ( opp === '-') {
             if (currNum === '') {
                 setCurrNum('-');
