@@ -80,6 +80,7 @@ const CalcMain = () => {
                 setCurrNum('-');
             } else if (operand === '') {
                 setOpp(opp);
+                setSolved(false);
             } else {
                 setEquation([...equation, currNum, operand]);
                 setCurrNum('-');
