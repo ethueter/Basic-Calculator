@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Display from './Display';
 import Keypad from './Keypad';
 import Spacer from './Spacer';
@@ -13,13 +13,28 @@ const CalcMain = () => {
     const [equation, setEquation] = useState([]);
     const [solved, setSolved] = useState(false);
 
+    useEffect(() => {
+        window.addEventListener('keyup', handleClick)
+    }, []);
+
+    const handleKeyUp = (event) => {
+      console.log(event.type)  
+    };
+
     const handleClick = (event) => {
-        let id = event.target.id;
-        let val = event.target.innerText
+        let id, val;
+
+        if (event.type === 'click') {
+            id = event.target.id;
+            val = event.target.innerText;
+        } else if (event.type === 'keyup') {
+            id = event.key;
+            val = event.key;
+        }
         
         switch(true) {
             case nums.includes(id):
-            console.log('number', id);
+            console.log(event.type, id, val);
             handleNum(val)
             break;
             case opps.includes(id):
@@ -46,6 +61,7 @@ const CalcMain = () => {
 
     const handleNum = (num) => {
         let newNum = currNum + num;
+        console.log(typeof num, num, currNum, newNum)
 
         if (solved) {
             setCurrNum(num);
