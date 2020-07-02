@@ -23,7 +23,6 @@ const CalcMain = () => {
     const handleClick = (event) => {
         let id, val;
         
-
         if (event.type === 'click') {
             id = event.target.id;
             val = event.target.innerText;
@@ -40,7 +39,6 @@ const CalcMain = () => {
             handleOpp(val);
             break;
             case id === 'decimal' || id === ".":
-            console.log(id);
             handleDec();
             break;
             case id === 'Enter' || id === 'equate':
@@ -65,7 +63,6 @@ const CalcMain = () => {
 
     const handleNum = (num) => {
         let newNum = currNum + num;
-        console.log('curr and new', currNum, newNum, 'test', currNum + num)
 
         if (solved) {
             setCurrNum(num);
