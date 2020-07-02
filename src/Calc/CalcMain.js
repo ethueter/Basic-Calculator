@@ -4,6 +4,7 @@ import Keypad from './Keypad';
 import Spacer from './Spacer';
 import { nums, opps } from './Equate';
 import { evaluate } from 'mathjs';
+import Header from "../Header";
 
 
 const CalcMain = () => {
@@ -125,12 +126,15 @@ const CalcMain = () => {
     };
     
     return (
-        <div className='calc-body'>
-            <Display display={display}/>
-            <Spacer />
-            <Keypad click={handleClick} />
+      <div>
+        <Header />
+        <div className="calc-body">
+          <Display display={display} />
+          <Spacer />
+          <Keypad click={handleClick} />
         </div>
-    )
+      </div>
+    );
 };
 
 export default CalcMain;
