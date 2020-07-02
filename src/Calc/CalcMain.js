@@ -20,10 +20,6 @@ const CalcMain = () => {
         }
     });
 
-    // const handleKeyUp = (event) => {
-    //   console.log(event.type)  
-    // };
-
     const handleClick = (event) => {
         let id, val;
         
@@ -34,7 +30,7 @@ const CalcMain = () => {
         } else if (event.type === 'keyup') {
             id = event.key;
             val = event.key;
-        }
+        };
         
         switch(true) {
             case nums.includes(id):
@@ -46,6 +42,12 @@ const CalcMain = () => {
             case id === 'decimal' || id === ".":
             console.log(id);
             handleDec();
+            break;
+            case id === 'Enter' || id === 'equate':
+            getSolution();
+            break;
+            case id === "Clear" || id === 'clear':
+            handleClear();
             break;
             default:
             console.log("didn't work")
@@ -129,11 +131,7 @@ const CalcMain = () => {
         <div className='calc-body'>
             <Display display={display}/>
             <Spacer />
-            <Keypad 
-                click={handleClick}
-                clear={handleClear}
-                solve={getSolution}
-                />
+            <Keypad click={handleClick} />
         </div>
     )
 };
