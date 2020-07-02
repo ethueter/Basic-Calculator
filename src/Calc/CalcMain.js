@@ -14,15 +14,19 @@ const CalcMain = () => {
     const [solved, setSolved] = useState(false);
 
     useEffect(() => {
-        window.addEventListener('keyup', handleClick)
-    }, []);
+        window.addEventListener('keyup', handleClick);
+        return ()=> {
+            window.removeEventListener('keyup', handleClick)
+        }
+    });
 
-    const handleKeyUp = (event) => {
-      console.log(event.type)  
-    };
+    // const handleKeyUp = (event) => {
+    //   console.log(event.type)  
+    // };
 
     const handleClick = (event) => {
         let id, val;
+        
 
         if (event.type === 'click') {
             id = event.target.id;
@@ -34,14 +38,12 @@ const CalcMain = () => {
         
         switch(true) {
             case nums.includes(id):
-            console.log(event.type, id, val);
             handleNum(val)
             break;
             case opps.includes(id):
-            console.log('operand', id);
             handleOpp(val);
             break;
-            case id === 'decimal':
+            case id === 'decimal' || id === ".":
             console.log(id);
             handleDec();
             break;
@@ -61,7 +63,7 @@ const CalcMain = () => {
 
     const handleNum = (num) => {
         let newNum = currNum + num;
-        console.log(typeof num, num, currNum, newNum)
+        console.log('curr and new', currNum, newNum, 'test', currNum + num)
 
         if (solved) {
             setCurrNum(num);

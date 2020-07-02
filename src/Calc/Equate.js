@@ -20,7 +20,7 @@ const nums = [
   "8",
   "9"
 ];
-const opps = ["add", "sub", "multiply", "divide"];
+const opps = ["add", "sub", "multiply", "divide", "+", "-", "*", "/"];
 
 
 export {nums, opps}

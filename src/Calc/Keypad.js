@@ -5,14 +5,24 @@ const Keypad = (props) => {
     
     return (
       <div className="keypad-container">
-        <div className="keypad">
-          <button id="seven" className="key-reg" onClick={props.click}>
+        <div className="keypad" >
+          <button
+            id="seven"
+            className="key-reg"
+            onClick={props.click}
+            
+          >
             7
           </button>
-          <button id="eight" className="key-reg" onClick={props.click}>
+          <button
+            id="eight"
+            className="key-reg"
+            onClick={props.click}
+            
+          >
             8
           </button>
-          <button id="nine" className="key-reg" onClick={props.click}>
+          <button id="nine" className="key-reg" onClick={props.click} >
             9
           </button>
           <button id="four" className="key-reg" onClick={props.click}>
@@ -39,29 +49,27 @@ const Keypad = (props) => {
           <button id="decimal" className="key-reg" onClick={props.click}>
             .
           </button>
-          
         </div>
-            <div className='keypad-opps'>
-                <button id="clear" className="key-big" onClick={props.clear}>
-                    Clear
-                </button>
-                <button id="add" className="key-reg" onClick={props.click}>
-                    +
-                </button>
-                <button id="sub" className="key-reg" onClick={props.click}>
-                    -
-                </button>
-                <button id="multiply" className="key-reg" onClick={props.click}>
-                    *
-                </button>
-                <button id="divide" className="key-reg" onClick={props.click}>
-                    /
-                </button>
-                <button id="equate" className="key-big" onClick={props.solve}>
-                    =
-                </button>
-            </div>
-        
+        <div className="keypad-opps">
+          <button id="clear" className="key-big" onClick={props.clear}>
+            Clear
+          </button>
+          <button id="add" className="key-reg" onClick={props.click}>
+            +
+          </button>
+          <button id="sub" className="key-reg" onClick={props.click}>
+            -
+          </button>
+          <button id="multiply" className="key-reg" onClick={props.click}>
+            *
+          </button>
+          <button id="divide" className="key-reg" onClick={props.click}>
+            /
+          </button>
+          <button id="equate" className="key-big" onClick={props.solve}>
+            =
+          </button>
+        </div>
       </div>
     );
 };
